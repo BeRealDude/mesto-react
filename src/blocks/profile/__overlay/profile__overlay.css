@@ -1,0 +1,11 @@
+.profile__overlay{
+    opacity: 0;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url(../../../images/Vectorpencil.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    grid-row: 1;
+    grid-column: 1;
+}

@@ -1,0 +1,28 @@
+.form__error{
+    max-width: 357px;
+    position: absolute;
+    top: 31px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: red;
+    opacity: 0;
+}
+
+.form__error:last-of-type{
+    top: 93px;
+}
+
+@media (max-width: 915px) {
+    .form__error{
+        top: 28px;
+        font-size: 11px;
+        line-height: 14px;
+    }
+
+    .form__error:last-of-type{
+        top: 84px;
+    }
+}

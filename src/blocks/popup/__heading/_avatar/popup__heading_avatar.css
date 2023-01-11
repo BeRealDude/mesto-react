@@ -1,0 +1,9 @@
+.popup__heading_avatar{
+    margin: 0;
+}
+
+@media (max-width: 915px) {
+    .popup__heading_avatar{
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,15 @@
+.popup__alt{
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    margin: 1.8% 0 0;
+}
+
+@media (max-width: 915px) {
+    .popup__alt{
+        margin-top: 4.2%;
+    }
+}

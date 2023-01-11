@@ -1,0 +1,29 @@
+.form__submit-btn_invalid{
+    background: none;
+    opacity: 0.2;
+    color: black;
+    border: 1px solid black;
+    cursor: unset;
+
+    pointer-events:none;
+
+    min-width: 358px;
+    min-height: 50px;
+    border-radius: 2px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    padding: 0;
+}
+
+@media (max-width: 915px) {
+    .form__submit-btn{
+        min-width: 238px;
+        min-height: 46px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}

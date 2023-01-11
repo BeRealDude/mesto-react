@@ -1,0 +1,25 @@
+.popup__text{
+    border: 0;
+    border-bottom: 1px solid;
+    outline: none;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    padding: 0 0 3.66%;
+}
+
+.popup__text:last-of-type{
+    margin: 8.5% 0 13.5%;
+}
+
+@media (max-width: 915px) {
+    .popup__heading{
+        padding: 0 0 5.66%;
+    }
+    .popup__text:last-of-type{
+        margin: 11.5% 0 20.5%;
+    }
+}

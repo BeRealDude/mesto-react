@@ -1,0 +1,11 @@
+.elements__quantity-like{
+    width: 22px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    grid-column: 2;
+    justify-self: self-end;
+    text-align: center;
+}

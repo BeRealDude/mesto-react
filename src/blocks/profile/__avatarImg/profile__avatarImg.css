@@ -1,0 +1,12 @@
+.profile__avatarImg {
+    background-size: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 120px;
+    margin-right: 3.5%;
+    width: 120px;
+    object-fit: cover;
+    grid-row: 1;
+    grid-column: 1;
+    color: white;
+}

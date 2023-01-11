@@ -1,0 +1,9 @@
+.elements__item{
+    max-width: 282px;
+    min-height: 361px;
+    background-color: white;
+    display: grid;
+    border-radius: 10px;
+    justify-items: center;
+    position: relative;
+}

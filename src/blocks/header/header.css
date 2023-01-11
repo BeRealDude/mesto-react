@@ -1,0 +1,16 @@
+.header{
+    max-width: 880px;
+    min-height: 74px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 3.53% auto 0;
+}
+
+@media (max-width: 915px) {
+    .header{
+        max-width: 320px;
+        min-height: 56px;
+        margin-top: 9%;
+    }
+}

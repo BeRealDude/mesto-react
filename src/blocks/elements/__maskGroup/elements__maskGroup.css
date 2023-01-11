@@ -1,0 +1,14 @@
+.elements__maskGroup{
+    width: 282px;
+    height: 282px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    object-fit: cover;
+    background-color: black;
+    color: white;
+}
+
+.elements__maskGroup:hover{
+    transition: 0.3s;
+    opacity: 0.6;
+}
