@@ -16,4 +16,4 @@
 * ООП
 
 #### Ссылка на проект:
-https://berealdude.github.io/mesto/
+https://berealdude.github.io/mesto-react/
