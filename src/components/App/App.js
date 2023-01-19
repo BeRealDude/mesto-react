@@ -6,9 +6,10 @@ import Footer from '../Footer/Footer'
 //import ProfilePopupAvatar from '../Popups/ProfilePopupAvatar';
 //import ElementsPopup from '../Popups/ElementsPopup';
 //import DeletePopup from '../Popups/DeletePopup';
-import PopupImg from '../Popups/PopupImg';
+//import PopupImg from '../Popups/PopupImg';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
 //import Elements from '../Elements/Elements';
+import ImagePopup from '../ImagePopup/ImagePopup';
 
 function App() {
 
@@ -16,6 +17,8 @@ function App() {
   const [isAddPlacePopupOpen, setAddPlacePopupOpen] = useState(false);
   const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = useState(false);
   const [isDeletePopupOpen, setDeletePopupOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState({});
+  
 
   function handleEditProfileClick(){
     setEditProfilePopupOpen(true);
@@ -33,12 +36,22 @@ function App() {
     setDeletePopupOpen(true);
   }
 
+  function handleCardClick(data) {
+    setSelectedCard(data)
+  }
+
+  
+
   function closeAllPopups() {
     setEditProfilePopupOpen(false);
     setAddPlacePopupOpen(false);
     setEditAvatarPopupOpen(false);
     setDeletePopupOpen(false);
+    setSelectedCard({});
+    
   }
+
+  
 
   return (
     <>
@@ -48,6 +61,7 @@ function App() {
       onAddPlace={handleAddPlaceClick}
       onEditAvatar={handleEditAvatarClick}
       onDeletePopup={handleDeletePopupClick}
+      onCardClick={handleCardClick}
       />
 
       
@@ -111,12 +125,11 @@ function App() {
       isOpen={isDeletePopupOpen}
       onClose={closeAllPopups}
       />
-
       
-      
-      
-      
-      <PopupImg />
+      <ImagePopup 
+      data={selectedCard}
+      onClose={closeAllPopups}
+      />
     </>
   );
 }
