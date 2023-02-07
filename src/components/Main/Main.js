@@ -51,7 +51,7 @@ function Main(props) {
       <section className="cards">
         <ul className="elements">
           {props.cards.map((data) => (
-            <Card key={data._id} data={data} popup={props} handleLikeClick={props} />
+            <Card key={data._id} data={data} popup={props} handleLikeClick={props} handleDeleteClick={props}/>
           ))}
         </ul>
       </section>

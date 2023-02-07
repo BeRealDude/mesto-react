@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 function Card(props) {
-    const { data, popup, handleLikeClick} = props;
+    const { data, popup, handleLikeClick, handleDeleteClick} = props;
     
    const currentUser = useContext(CurrentUserContext);
     const isOwn = data.owner._id === currentUser._id;
@@ -11,9 +11,11 @@ function Card(props) {
         `elements__button-like ${isLiked && 'button-like_active'}` 
       );; 
 
+
+    //   Открытие попа удаления onClick={popup.onDeletePopup}
     return (
         <li className="elements__item">
-           {isOwn && <button onClick={popup.onDeletePopup} type="button" className="elements__button-delete" />}
+           {isOwn && <button  onClick={() => handleDeleteClick.onCardDelete(data)} type="button" className="elements__button-delete" />}
             <img className="elements__maskGroup elements__popup-img" src={data.link} alt={data.name} onClick={() => popup.onCardClick(data)} />
             <div className="elements__wrapper">
                 <h2 className="elements__title">{data.name}</h2>

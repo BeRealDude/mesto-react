@@ -81,6 +81,14 @@ function App() {
     
 } 
 
+function handleCardDelete(data) {
+  console.log('Удаление карточки')
+  api.dltCard(data._id)
+  .then(() => {
+    setCards((state) => state.filter((c) => c._id !== data._id))
+});
+}
+
   
 
   return (
@@ -96,6 +104,7 @@ function App() {
       onCardClick={handleCardClick}
       cards={cards}
       onCardLike={handleCardLike}
+      onCardDelete={handleCardDelete}
       />
 
       <Footer />
