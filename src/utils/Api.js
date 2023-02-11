@@ -25,12 +25,13 @@ class Api {
       }
   
    editInfo(info) {
+    //console.log('api', info)
     return fetch(`${this._baseUrl}/users/me`, {
         method: "PATCH",
         headers: this._headers,
         body: JSON.stringify({
-            name: info.userName,
-            about: info.userActivity
+            name: info.name,
+            about: info.about
           })
     }).then(this._checkResponse)
   }

@@ -12,6 +12,7 @@ import PopupWithForm from '../PopupWithForm/PopupWithForm';
 import ImagePopup from '../ImagePopup/ImagePopup';
 import { api } from "../../utils/Api";
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import EditProfilePopup from '../EditProfilePopup/EditProfilePopup';
 
 
 function App() {
@@ -89,8 +90,20 @@ function handleCardDelete(data) {
 });
 }
 
+function handleUpdateUser(info) {
+  //console.log('info', info)
+  api.editInfo(info)
+  .then((info) => {
+    setCurrentUser(info);
+    closeAllPopups();
+  })
+  .catch((err) => {
+    console.log(`${err}`);
+  })
   
-
+  
+}
+  
   return (
     <>
       <Header />
@@ -109,7 +122,9 @@ function handleCardDelete(data) {
 
       <Footer />
 
-      <PopupWithForm 
+      <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
+
+      {/* <PopupWithForm 
       data={{
         classSelector: 'profile-popup',
         title: 'Редактировать профиль',
@@ -124,7 +139,7 @@ function handleCardDelete(data) {
         <span className="form__error user-name-error" id="user-name-error" />
         <input required minLength="2" maxLength="200" className="popup__text" type="text" name="userActivity" id="user-activity" placeholder="О себе" />
         <span className="form__error user-activity-error" id="user-activity-error" />
-        </PopupWithForm>
+        </PopupWithForm> */}
 
         <PopupWithForm 
       data={{
