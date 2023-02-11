@@ -14,6 +14,7 @@ import { api } from "../../utils/Api";
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import EditProfilePopup from '../EditProfilePopup/EditProfilePopup';
 import EditAvatarPopup from '../EditAvatarPopup/EditAvatarPopup';
+import AddPlacePopup from '../AddPlacePopup/AddPlacePopup';
 
 
 function App() {
@@ -111,6 +112,17 @@ api.editAvatar(info)
 })
 }
 
+function handleAddPlaceSubmit(data){
+  api.addNewCard(data)
+  .then((data) => {
+    setCards([data, ...cards]);
+    closeAllPopups();
+  })
+  .catch((err) => {
+    console.log(`${err}`);
+  })
+}
+
   return (
     <>
       <Header />
@@ -131,6 +143,7 @@ api.editAvatar(info)
 
       <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
       <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar} />
+      <AddPlacePopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} onAddPlace={handleAddPlaceSubmit} />
       {/* <PopupWithForm 
       data={{
         classSelector: 'profile-popup',
@@ -148,7 +161,7 @@ api.editAvatar(info)
         <span className="form__error user-activity-error" id="user-activity-error" />
         </PopupWithForm> */}
 
-        <PopupWithForm 
+        {/* <PopupWithForm 
       data={{
         classSelector: 'elements-popup',
         title: 'Новое место',
@@ -162,7 +175,7 @@ api.editAvatar(info)
                 <span className="form__error formCard-title-error" id="formCard-title-error" />
                 <input required className="popup__text" type="url" name="link" id="formCard-place" placeholder="Ссылка на картинку" />
                 <span className="form__error formCard-place-error" id="formCard-place-error" />
-      </PopupWithForm>
+      </PopupWithForm> */}
 
       {/* <PopupWithForm 
       data={{
