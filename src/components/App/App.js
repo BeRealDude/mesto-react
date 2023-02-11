@@ -13,6 +13,7 @@ import ImagePopup from '../ImagePopup/ImagePopup';
 import { api } from "../../utils/Api";
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import EditProfilePopup from '../EditProfilePopup/EditProfilePopup';
+import EditAvatarPopup from '../EditAvatarPopup/EditAvatarPopup';
 
 
 function App() {
@@ -100,10 +101,16 @@ function handleUpdateUser(info) {
   .catch((err) => {
     console.log(`${err}`);
   })
-  
-  
 }
-  
+
+function handleUpdateAvatar(info){
+api.editAvatar(info)
+.then((info) => {
+  setCurrentUser(info);
+  closeAllPopups();
+})
+}
+
   return (
     <>
       <Header />
@@ -123,7 +130,7 @@ function handleUpdateUser(info) {
       <Footer />
 
       <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
-
+      <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar} />
       {/* <PopupWithForm 
       data={{
         classSelector: 'profile-popup',
@@ -157,7 +164,7 @@ function handleUpdateUser(info) {
                 <span className="form__error formCard-place-error" id="formCard-place-error" />
       </PopupWithForm>
 
-      <PopupWithForm 
+      {/* <PopupWithForm 
       data={{
         classSelector: 'profile-popup-avatar',
         title: 'Обновить аватар',
@@ -169,7 +176,7 @@ function handleUpdateUser(info) {
       >
         <input required className="popup__text" type="url" name="userAvatar" id="userAvatar" placeholder="Ссылка на картинку" />
         <span className="form__error userAvatar-error" id="userAvatar-error" />
-      </PopupWithForm>
+      </PopupWithForm> */}
 
       <PopupWithForm 
       data={{
